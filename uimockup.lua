@@ -47,7 +47,7 @@ local function init_demo_1()
 		scale_limit = {min = 0.5, max = 30},
 		horizontal_align = 'center',
 		vertical_align   = 'center',
-		auto_hide   = false, --<-- PURPOSE 2
+		auto_hide   = false,
 	})
 
 	local map = map_ui:new_element('map', {
@@ -66,19 +66,20 @@ init_demo_1()
 
 ------------------------------------------------------------------------------------
 -- DEMO 2: Vanilla UI Mockup
--- PURPOSE: 
+-- PURPOSES: 
 --   0. Show-off a potentially complex alignment. (top-RIGHT. top is easy, right is not)
 --   1. Show a modularized UI made up of multiple synced groups.
 --   2. Illustrate how synced groups operate during dragging. This sort of group, how-
 --        ever, wouldn't normally be draggable. It is only so for the sake of #3.
 --   3. Exhibit the drag bounds feature and how it factors in all the synced groups.
---   4. Display the default auto_hide default behavior: ON.
---   5. Demonstrate that groups can be hidden by default and shown on-demand.
---   6. Demonstrate the hover_color, hover_arrow, left_click_travel, and left_click_bulge
+--   4. Reveal that the default visibility of groups is false. (invisible)
+--   5. Display the default auto_hide default behavior: ON. (shows/hides on zoning)
+--   6. Demonstrate that groups can be hidden by default and shown on-demand.
+--   7. Demonstrate the hover_color, hover_arrow, left_click_travel, and left_click_bulge
 --        visual effects, and how to register for them.
---   7. Reveal how center-focused scroll zoom behaves and even honors drag bounds.
---   8. Discloses how to integrate click event args with the click_toggle visuals.
---   9. Teaches how to combine alignment (top/right) with offset to imitate a vanilla
+--   8. Reveal how center-focused scroll zoom behaves and even honors drag bounds.
+--   9. Discloses how to integrate click event args with the click_toggle visuals.
+--   10. Teaches how to combine alignment (top/right) with offset to imitate a vanilla
 --        ui element's placement precisely, making slick UI replacements easier.
 ------------------------------------------------------------------------------------
 function init_demo_2()
@@ -243,7 +244,7 @@ init_demo_2()
 
 ------------------------------------------------------------------------------------
 -- DEMO 3: Clustered Buttons UI
--- PURPOSE:
+-- PURPOSES:
 --    1. Show a much more simple UI made up of a few buttons.
 --    2. Show how to register for and listen to scroll events for easy var changing.
 --    3. Display the hover_tint, hover_bugle, hover_travel, click_tint, and
@@ -404,7 +405,7 @@ init_demo_3()
 
 ------------------------------------------------------------------------------------
 -- DEMO 4: Advanced Text Box UI Mockup
--- PURPOSE: Show how simple text boxes can easily become interactable.
+-- PURPOSES: Show how simple text boxes can easily become interactable.
 -- NOTEWORTHY:
 --     1. The active/min/max settings are all user preferences/persist on addon reload.
 --     2. The scroll has no focus, so this element grows outward from its anchor's x/y pos.
@@ -510,7 +511,7 @@ init_demo_4()
 
 ------------------------------------------------------------------------------------
 -- DEMO 5: Alignment Example
--- PURPOSE: 
+-- PURPOSES: 
 --     1. Shows effortless support for a potentially complex alignment. (top/center+offset)
 ------------------------------------------------------------------------------------
 function init_demo_5()
@@ -534,7 +535,7 @@ init_demo_5()
 
 
 windower.add_to_chat(207, '[UIMockup] Loading RolandJ\'s UIMockup, a simple showcase of his rj_groups.lua library\'s capabilities...')
-log('NOTE: Be sure to take a look at this addon\'s .lua file for a short wiki section written for addon authors!')
+log('NOTE: Be sure to take a look at this addon\'s GitHub repository for a wiki section written for addon authors!')
 
 windower.register_event('addon command', function(...)
 	local cmd = T{...}[1] and T{...} or T{'help'}
